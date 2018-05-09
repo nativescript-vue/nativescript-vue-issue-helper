@@ -14,10 +14,10 @@ Some users would give us a link to a real project and hope we can help them figu
 
 - You are already familiar with your codebase, but we are not. It is extremely time-consuming to hunt a bug in a big and unfamiliar codebase.
 
-- The problematic behavior may very well be caused by your code rather than by a bug in Vue.
+- The problematic behavior may very well be caused by your code rather than by a bug in Nativescript-Vue.
 
-A **minimal** reproduction means it demonstrates the bug, and the bug only. It should only contain the bare minimum amount of code that can reliably cause the bug. Try your best to get rid of anything that aren't directly related to the problem.
+A **minimal** reproduction means it demonstrates the bug, and the bug only. It should only contain the bare minimum amount of code that can reliably cause the bug. Try your best to get rid of anything that isn't directly related to the problem.
 
 ##### How to create a repro
 
-Unless your bug can only be reproduced with a built setup, we prefer reproductions made with online coding services like [JSFiddle](https://jsfiddle.net/chrisvfritz/50wL7mdz/), [JSBin](https://jsbin.com) or [Codepen](https://codepen.io). If your bug involves a build setup, you can create a project using [vue-cli](https://github.com/vuejs/vue-cli) and provide the link to a GitHub repository.
+Unless your bug can only be reproduced with a built setup, we prefer reproductions made with [NativeScript-Playground](https://play.nativescript.org/). If your bug involves a build setup, you can create a project using any of the [officially supported templates](https://nativescript-vue.org/en/docs/getting-started/templates/) and provide the link to a GitHub repository.

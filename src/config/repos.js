@@ -1,11 +1,6 @@
 const repos = [
-  { id: 'vuejs/vue', name: 'vue' },
-  { id: 'vuejs/vuex', name: 'vuex' },
-  { id: 'vuejs/vue-router', name: 'vue-router' },
-  { id: 'vuejs/vue-loader', name: 'vue-loader' },
-  { id: 'vuejs/vue-test-utils', name: 'vue-test-utils' },
-  { id: 'vuejs/vue-cli', name: 'vue-cli' },
-  { id: 'vuejs/vue-devtools', name: 'vue-devtools' }
+  { id: 'nativescript-vue/nativescript-vue', name: 'nativescript-vue' },
+  { id: 'nativescript-vue/vue-cli-template', name: 'vue-cli-template' },
 ]
 
 export { repos }

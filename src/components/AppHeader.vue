@@ -1,81 +1,34 @@
 <template>
-  <nav class="app-header">
-    <div class="container">
-      <a class="brand" href="#">
-        <img
-          class="logo"
-          src="../assets/images/logo.png"
-          alt="Vue's logo"
-          height="24"
-        >
-        Issue Helper
-      </a>
+    <div class="bg-blue-dark md:border-t-8 border-green">
+        <div class="container flex items-center justify-between px-4 lg:px-0 mx-auto" style="max-width: 850px">
+            <a href="/" class="flex items-center no-underline text-blue-lightest">
+                <div class="relative w-16 h-16">
+                    <img v-cloak class="w-16 h-16 absolute pin"
+                         src="https://art.nativescript-vue.org/NativeScript-Vue-White-Green.svg"
+                         alt="NativeScript-Vue Logo">
+                    <img v-cloak class="w-16 h-16 absolute pin transition-all-ease hover:opacity-0"
+                         src="https://art.nativescript-vue.org/NativeScript-Vue-Green-White.svg"
+                         alt="NativeScript-Vue Logo">
+                </div>
+                <span class="ml-4">Issue Helper</span>
+            </a>
 
-      <ul class="nav">
-        <li
-          v-for="(locale, key) in $root.$locales"
-          :key="key"
-          class="nav-item"
-        >
-          <a
-            class="nav-link"
-            :class="{ active: lang === key }"
-            @click="$emit('change-lang', key)"
-          >
-            {{ locale._label }}
-          </a>
-        </li>
-      </ul>
+            <ul v-if="$root.$locales.length > 1" class="list-reset flex items-center">
+                <li v-for="(locale, key) in $root.$locales"
+                    :key="key">
+                    <a class="no-underline cursor-pointer ml-4"
+                       :class="{ 'text-green': lang === key, 'text-blue-lightest': lang !== key }"
+                       @click="$emit('change-lang', key)">
+                        {{ locale._label }}
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
 </template>
 
 <script>
-import locales from '../i18n/locales/index'
-
-export default {
-  props: ['lang']
-}
+  export default {
+    props: ['lang']
+  }
 </script>
-
-<style lang="stylus" scoped>
-@import "../style/imports"
-
-.app-header
-  background lighten($vue-color-light-neutral, 60%)
-  border-bottom solid 1px $vue-color-light-neutral
-
-  &,
-  .container,
-  .brand,
-  .nav
-    h-box()
-    box-center()
-
-  .container
-    max-width $page-width
-    flex 100% 1 1
-    justify-content space-between
-    padding 24px
-    box-sizing border-box
-
-  .brand
-    color $vue-color-dark
-    .logo
-      margin-right 8px
-
-  .nav
-    margin 0
-
-  .nav-item
-    list-style none
-  .nav-item + .nav-item
-    margin-left 8px
-
-  .nav-link
-    cursor default
-    &:not(.active)
-      cursor pointer
-      color $vue-color-dark
-
-</style>

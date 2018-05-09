@@ -17,7 +17,6 @@
       </VueFormField>
 
       <VueFormField
-        v-if="repo !== 'vuejs/vue-devtools'"
         :title="i18n('repro-title')"
       >
         <VueInput
@@ -34,17 +33,17 @@
       </VueFormField>
 
       <VueFormField
-        v-else
-        :title="i18n('browser-and-os-title')"
+          class="span-2"
+          :title="i18n('platform-and-os-title')"
       >
         <VueInput
-          v-model="attrs.browserAndOS"
+          v-model="attrs.platformAndOS"
           required
         />
 
         <i18n
           slot="subtitle"
-          id="browser-and-os-subtitle"
+          id="platform-and-os-subtitle"
         />
       </VueFormField>
 
@@ -125,7 +124,7 @@ export default {
         expected: '',
         actual: '',
         extra: '',
-        browserAndOS: ''
+        platformAndOS: ''
       },
       versions: [],
       loadingVersion: false,
@@ -176,7 +175,7 @@ export default {
     },
 
     generate () {
-      const { version, reproduction, steps, expected, actual, extra, browserAndOS } = this.attrs
+      const { version, reproduction, steps, expected, actual, extra, platformAndOS } = this.attrs
 
       return generate(`
 ### Version
@@ -185,8 +184,8 @@ ${version}
 ${
   reproduction ? `### Reproduction link
 [${reproduction}](${reproduction})` : ``}${
-  browserAndOS ? `### Browser and OS info
-${browserAndOS}` : ``
+  platformAndOS ? `### Platform and OS info
+${platformAndOS}` : ``
 }
 
 ### Steps to reproduce

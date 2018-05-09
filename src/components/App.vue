@@ -13,6 +13,7 @@
         >
           <VueSelect
             v-model="repo"
+            class="button-nsvue"
           >
             <VueSelectButton
               v-for="option of repos"
@@ -28,6 +29,7 @@
         >
           <VueSelect
             v-model="type"
+            class="button-nsvue"
           >
             <VueSelectButton
               v-for="option of types"
@@ -122,14 +124,16 @@
     <small>
       Built with
       <a href="https://github.com/vuejs/vue-cli">vue-cli</a>
+      based on
+      <a href="https://github.com/vuejs/vue-issue-helper">vue-issue-helper</a>
       &centerdot;
-      Check out source on <a href="https://github.com/vuejs/vue-issue">GitHub</a>
+      Check out source on <a href="https://github.com/nativescript-vue/nativescript-vue-issue-helper">GitHub</a>
     </small>
   </footer>
 </div>
 </template>
 
-<script lang="babel">
+<script >
 import { repos } from '../config'
 import { getQuery, updateQuery } from '../helpers'
 
@@ -183,7 +187,7 @@ export default {
   },
 
   created () {
-    this.repo = getQuery().repo || 'vuejs/vue'
+    this.repo = getQuery().repo || 'nativescript-vue/nativescript-vue'
   },
 
   methods: {
@@ -234,4 +238,17 @@ export default {
 .app-footer
   text-align center
   margin 24px 0
+</style>
+
+<style>
+  .vue-input:not(.flat) > .content,
+  .button-nsvue .vue-button,
+  .tooltip.popover .popover-inner,
+  .vue-group-button.vue-button:not(.selected):not(.flat) {
+    background: #f1f3f6 !important;
+  }
+
+  .vue-dropdown.open .dropdown-trigger .vue-group-button.vue-button:not(.selected):not(.flat):not(.ghost), .vue-group-button.vue-button:not(.selected):not(.flat):not(.ghost):hover {
+    background: #e5e7ea !important;
+  }
 </style>
