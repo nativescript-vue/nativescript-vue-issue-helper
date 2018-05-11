@@ -183,7 +183,8 @@ ${version}
 
 ${
   reproduction ? `### Reproduction link
-[${reproduction}](${reproduction})` : ``}${
+[${reproduction}](${reproduction})` : ``}
+${
   platformAndOS ? `### Platform and OS info
 ${platformAndOS}` : ``
 }
