@@ -171,6 +171,10 @@ export default {
         await this.fetchVersions(page + 1)
       } else {
         this.loadingVersion = false
+        
+        if(this.versions.length === 0) {
+          this.versions.push('N/A')
+        }
       }
     },
 
