@@ -173,7 +173,7 @@ export default {
         this.loadingVersion = false
         
         if(this.versions.length === 0) {
-          this.versions.push('N/A')
+          this.versions.push({ value: 'N/A' })
         }
       }
     },
